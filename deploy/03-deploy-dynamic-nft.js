@@ -33,12 +33,12 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   });
 
   const args = [ethUsdPriceFeedAddress, lowSvg, hihgSvg];
-  // const dynamicSvgNft = await deploy("DynamicSvgNft", {
-  //   from: deployer,
-  //   args,
-  //   log: true,
-  //   waitConfirmations: network.config.blockConfirmations || 1,
-  // });
+  const dynamicSvgNft = await deploy("DynamicSvgNft", {
+    from: deployer,
+    args,
+    log: true,
+    waitConfirmations: network.config.blockConfirmations || 1,
+  });
 
   if (
     !developmentChains.includes(network.name) &&
